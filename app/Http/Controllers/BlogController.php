@@ -11,7 +11,13 @@ class BlogController extends Controller
     {
         $data = Post::orderBy('created_at','desc')->get();
 
-        return view('blog', ['posts' => $data]);
+        return view('blog.index', ['posts' => $data]);
     
+    }
+    public function view($slug)
+    {
+        $post = Post::where('slug', $slug)->get();
+        
+        return view('blog.view', ['post' => $post]);
     }
 }

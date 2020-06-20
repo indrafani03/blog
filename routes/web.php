@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 Route::get('/', 'BlogController@index');
+// Route::get('/view', function(){
+//  return view('blog.view');
+// });
+Route::get('/view/{slug}', 'BlogController@view');
 
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/home', 'HomeController@index');
