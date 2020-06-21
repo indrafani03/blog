@@ -18,6 +18,12 @@ Route::get('/', 'BlogController@index');
 //  return view('blog.view');
 // });
 Route::get('/view/{slug}', 'BlogController@view');
+Route::get('/post-list', 'BlogController@list');
+Route::get('/category-list/{category}', 'BlogController@list_category');
+Route::get('/cari', 'BlogController@cari')->name('blog.cari');
+Route::post('/comment', 'BlogController@comment')->name('blog.comment');
+
+
 
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/home', 'HomeController@index');

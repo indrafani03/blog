@@ -59,7 +59,7 @@
 						<button class="aside-btn"><i class="fa fa-bars"></i></button>
 						<button class="search-btn"><i class="fa fa-search"></i></button>
 						<div id="nav-search">
-							<form>
+							<form action="{{ route('blog.cari') }}" method="GET">
 								<input class="input" name="search" placeholder="Enter your search...">
 							</form>
 							<button class="nav-close search-close">
@@ -78,7 +78,7 @@
 					<!-- nav -->
 					<ul class="nav-menu">
 						<li class="has-dropdown">
-							<a href="index.html">Home</a>
+							<a href="{{ url('') }}">Home</a>
 							<div class="dropdown">
 								<div class="dropdown-body">
 									<ul class="dropdown-list">
@@ -94,7 +94,7 @@
 						</li>
 						
 						
-						<li><a href="#">Technology</a></li>
+						<li><a href="{{ url('/post-list')}}">Post List</a></li>
 						<li><a href="#">Health</a></li>
 						<li><a href="#">Travel</a></li>
 					</ul>
